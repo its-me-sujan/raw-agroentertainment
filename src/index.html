@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Raw</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link rel="icon" href="image/logo.png" type="image/png" />
     <link rel="stylesheet" href="./fonts/font.css" />
     <link rel="stylesheet" href="./style.css" />
@@ -17,6 +21,10 @@
       .rotate-270 {
         transform: rotate(-90deg);
       }
+      .map {
+        top: 9%;
+        right: 15%;
+      }
     </style>
   </head>
   <body>
@@ -29,14 +37,13 @@
             <img src="./image/logo.png" alt="Raw Logo" class="w-[106px]" />
           </a>
         </div>
-
-        <div class="w-[35%]">
+        <div class="md:hidden cursor-pointer text-2xl" id="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+        <div class="hidden md:block w-[35%]">
           <ul class="flex gap-x-9">
             <li class="relative">
-              <a
-                href="#"
-                class="flex font-khand items-center text-black dropdown-toggle"
-              >
+              <a href="#" class="flex items-center text-black dropdown-toggle">
                 RAW
                 <img
                   src="image/arrow.png"
@@ -111,29 +118,37 @@
 
     <div id="content"></div>
 
-    <footer class="footer mt-[9%]">
+    <footer class="footer relative mb-[10%]">
       <div class="bg-[#3C0C00]">
         <div class="mx-auto py-4 w-[80%]">
-          <p class="text-white text-[36px]">Newsletter</p>
-          <div class="flex gap-3 items-center">
-            <input
-              type="text"
-              name=""
-              id=""
-              placeholder="Email address"
-              class="w-[40%] px-[16px] py-[12px] rounded-3xl"
-            />
-            <button class="text-white mx-3 px-8 py-3 rounded-3xl bg-[#D19C34]">
-              Submit
-            </button>
+          <p class="text-white text-[24px] md:text-[36px]">Newsletter</p>
+          <div class="flex-col flex md:flex-row">
+            <div>
+              <input
+                type="text"
+                name=""
+                id=""
+                placeholder="Email address"
+                class="w-[80%] md:w-[461px] px-[16px] py-[12px] rounded-3xl"
+              />
+            </div>
+            <div>
+              <button
+                class="text-white mt-2 md:mt-0 md:mx-3 px-8 py-3 rounded-3xl bg-[#D19C34]"
+              >
+                Submit
+              </button>
+            </div>
           </div>
         </div>
       </div>
       <div class="py-7 bg-[#220700] text-white">
-        <div class="flex gap-x-[15%] items-center w-[80%] mx-auto">
+        <div
+          class="flex flex-wrap md:flex-row gap-x-[15%] md:items-center w-[80%] mx-auto"
+        >
           <div>
             <img src="image/logo.png" alt="" class="my-1.5 w-[128px]" />
-            <p>E square Pvt. Ltd</p>
+            <p class="-regular">E square Pvt. Ltd</p>
             <p>Sachetan Marg, Kathmandu</p>
             <p>pr.raw.e. square@gmail.com</p>
             <p>Sachetan Marg, Kathmandu</p>
@@ -157,13 +172,13 @@
               </a>
             </div>
           </div>
-          <div class="mt-[10%]">
+          <div class="md:mt-[10%] pt-[25%] md:pt-0">
             <ul>
               <li>
                 <a
                   href="#"
                   onclick="loadPage('our-journey')"
-                  class="block px-4 text-white hover:text-gray-500"
+                  class="block md:px-4 text-white hover:text-gray-500"
                   >Our Journey</a
                 >
               </li>
@@ -171,7 +186,7 @@
                 <a
                   href="#"
                   onclick="loadPage('our-purpose')"
-                  class="block px-4 text-white hover:text-gray-500"
+                  class="block md:px-4 text-white hover:text-gray-500"
                   >Our Purpose</a
                 >
               </li>
@@ -179,7 +194,7 @@
                 <a
                   href="#"
                   onclick="loadPage('why-raw')"
-                  class="block px-4 text-white hover:text-gray-500"
+                  class="block md:px-4 text-white hover:text-gray-500"
                   >Why RAW</a
                 >
               </li>
@@ -187,7 +202,7 @@
                 <a
                   href="#"
                   onclick="loadPage('meet-the-team')"
-                  class="block px-4 text-white hover:text-gray-500"
+                  class="block md:px-4 text-white hover:text-gray-500"
                   >Meet the Team</a
                 >
               </li>
@@ -195,14 +210,20 @@
                 <a
                   href="#"
                   onclick="loadPage('moments')"
-                  class="block px-4 text-white hover:text-gray-500"
+                  class="block md:px-4 text-white hover:text-gray-500"
                   >Moments</a
                 >
               </li>
             </ul>
           </div>
-          <div class="border w-[140px] h-[140px] relative bottom-[9rem]">
-            map
+          <div class="lg:absolute mt-3 lg:mt-0 map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.824237533192!2d85.31594907492254!3d27.691826726176792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19b2215a966f%3A0xd1b241958a3d3090!2sPathway%20Technologies%20-%20Geokrishi!5e0!3m2!1sen!2snp!4v1726631566867!5m2!1sen!2snp"
+              class="w-[100%] md:w-[432px] md:h-[432px] rounded-lg"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
         <div class="mt-[19px] w-[80%] mx-auto">
