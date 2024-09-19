@@ -26,3 +26,5 @@ prevButton.addEventListener("click", () => {
   }
   carousel.style.transform = `translateX(-${currentIndex * (width + 16)}px)`;
 });
+
+toggleSidebar("hamburger", "sidebar", "hamburger-icon");

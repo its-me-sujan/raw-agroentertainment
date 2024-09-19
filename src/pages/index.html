@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link rel="icon" href="images/logo.png" type="image/png" />
+    <link rel="icon" href="../icons/raw.png" type="image/png" />
     <link rel="stylesheet" href="../fonts/font.css" />
     <link rel="stylesheet" href="../style.css" />
     <style>
@@ -16,6 +16,12 @@
         display: none;
       }
       .dropdown-menu.show {
+        display: block;
+      }
+      .mob-dropdown-menu {
+        display: none;
+      }
+      .mob-dropdown-menu.show {
         display: block;
       }
       .rotate-270 {
@@ -53,12 +59,83 @@
           </a>
         </div>
         <div class="md:hidden cursor-pointer text-2xl" id="hamburger">
-          <i class="fas fa-bars"></i>
+          <i id="hamburger-icon" class="fas fa-bars"></i>
         </div>
+
+        <!-- sidebar -->
+        <div
+          id="sidebar"
+          class="fixed top-20 left-0 w-64 h-full bg-white shadow-lg transition-transform transform -translate-x-full md:hidden"
+        >
+          <ul class="space-y-4 p-4 pt-0">
+            <li class="relative">
+              <a
+                href="#"
+                class="flex font-khand-semibold items-center text-black mob-dropdown-toggle"
+              >
+                RAW
+                <img
+                  src="../images/arrow.png"
+                  alt=""
+                  class="mx-2 w-[12px] arrow transition-transform duration-300"
+                />
+              </a>
+              <ul class="mob-dropdown-menu mt-2 pl-4 space-y-2">
+                <li>
+                  <a
+                    href="our-journey.html"
+                    class="block font-khand-semibold text-black"
+                    >Our Journey</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="our-purpose.html"
+                    class="block font-khand-semibold text-black"
+                    >Our Purpose</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="why-raw.html"
+                    class="block font-khand-semibold text-black"
+                    >Why RAW</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block font-khand-semibold text-black"
+                    >Meet the Team</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block font-khand-semibold text-black"
+                    >Moments</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="our-impact.html" class="text-black font-khand-semibold"
+                >Our Impact</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-black font-khand-semibold">About Us</a>
+            </li>
+            <li>
+              <a href="#" class="text-black font-khand-semibold">Updates</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- main nav -->
         <div class="hidden md:block w-[35%]">
           <ul class="flex gap-x-9">
             <li class="relative">
-              <a href="#" class="flex items-center text-black dropdown-toggle">
+              <a
+                href="#"
+                class="flex font-khand-semibold items-center text-black dropdown-toggle"
+              >
                 RAW
                 <img
                   src="../images/arrow.png"
@@ -72,48 +149,50 @@
                 <li>
                   <a
                     href="our-journey.html"
-                    class="block px-4 py-2 text-black hover:bg-gray-100"
+                    class="block font-khand-semibold px-4 py-2 text-black hover:bg-gray-100"
                     >Our Journey</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
-                    class="block px-4 py-2 text-black hover:bg-gray-100"
+                    href="our-purpose.html"
+                    class="block font-khand-semibold px-4 py-2 text-black hover:bg-gray-100"
                     >Our Purpose</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
-                    class="block px-4 py-2 text-black hover:bg-gray-100"
+                    href="why-raw.html"
+                    class="block font-khand-semibold px-4 py-2 text-black hover:bg-gray-100"
                     >Why RAW</a
                   >
                 </li>
                 <li>
                   <a
                     href="#"
-                    class="block px-4 py-2 text-black hover:bg-gray-100"
+                    class="block font-khand-semibold px-4 py-2 text-black hover:bg-gray-100"
                     >Meet the Team</a
                   >
                 </li>
                 <li>
                   <a
                     href="#"
-                    class="block px-4 py-2 text-black hover:bg-gray-100"
+                    class="block font-khand-semibold px-4 py-2 text-black hover:bg-gray-100"
                     >Moments</a
                   >
                 </li>
               </ul>
             </li>
             <li>
-              <a href="our-impact.html" class="text-black">Our impact</a>
+              <a href="our-impact.html" class="text-black font-khand-semibold"
+                >Our impact</a
+              >
             </li>
             <li>
-              <a href="#" class="text-black">About us</a>
+              <a href="#" class="text-black font-khand-semibold">About us</a>
             </li>
             <li>
-              <a href="#" class="text-black">Updates</a>
+              <a href="#" class="text-black font-khand-semibold">Updates</a>
             </li>
           </ul>
         </div>
