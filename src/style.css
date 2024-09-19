@@ -590,6 +590,10 @@ body {
   z-index: 10;
 }
 
+.z-50 {
+  z-index: 50;
+}
+
 .col-span-4 {
   grid-column: span 4 / span 4;
 }
@@ -738,6 +742,10 @@ body {
   height: 100%;
 }
 
+.h-\[100vh\] {
+  height: 100vh;
+}
+
 .h-\[166px\] {
   height: 166px;
 }
@@ -756,6 +764,10 @@ body {
 
 .h-\[61px\] {
   height: 61px;
+}
+
+.h-\[72px\] {
+  height: 72px;
 }
 
 .h-\[86px\] {
@@ -864,6 +876,10 @@ body {
   flex-wrap: wrap;
 }
 
+.place-content-center {
+  place-content: center;
+}
+
 .place-items-center {
   place-items: center;
 }
@@ -960,6 +976,11 @@ body {
   background-color: rgb(233 233 233 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#FFFFFF\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -1040,6 +1061,7 @@ body {
 
 .pt-\[25\%\] {
   padding-top: 25%;
+
 }
 
 .text-center {
@@ -1053,6 +1075,12 @@ body {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-\[20px\] {
@@ -1077,6 +1105,10 @@ body {
 
 .text-\[60px\] {
   font-size: 60px;
+}
+
+.text-\[22px\] {
+  font-size: 22px;
 }
 
 .font-bold {
@@ -1106,6 +1138,16 @@ body {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-\[24\] {
+  color: 24;
+}
+
+.shadow-2xl {
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .shadow-lg {
