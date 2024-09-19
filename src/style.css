@@ -703,6 +703,10 @@ body {
   margin-top: 82px;
 }
 
+.mt-\[10\%\] {
+  margin-top: 10%;
+}
+
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
