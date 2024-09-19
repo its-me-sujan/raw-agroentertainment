@@ -7,26 +7,6 @@ const totalItems = document.querySelectorAll(".carousel-item").length;
 const itemsPerView = 4;
 const width = document.querySelector(".carousel-item").offsetWidth;
 
-/* // Handle Next Button
-    nextButton.addEventListener("click", () => {
-      if (currentIndex < totalItems - itemsPerView) {
-        currentIndex++;
-        carousel.style.transform = `translateX(-${
-          currentIndex * (100 / totalItems)
-        }%)`;
-      }
-    });
-  
-    // Handle Prev Button
-    prevButton.addEventListener("click", () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        carousel.style.transform = `translateX(-${
-          currentIndex * (100 / totalItems)
-        }%)`;
-      }
-    }); */
-
 // Handle Next Button (Infinite Scroll)
 nextButton.addEventListener("click", () => {
   if (currentIndex < totalItems - itemsPerView) {
