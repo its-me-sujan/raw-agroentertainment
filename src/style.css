@@ -707,6 +707,10 @@ body {
   margin-top: 82px;
 }
 
+.mt-\[10\%\] {
+  margin-top: 10%;
+}
+
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
@@ -1057,6 +1061,7 @@ body {
 
 .pt-\[25\%\] {
   padding-top: 25%;
+
 }
 
 .text-center {
@@ -1071,6 +1076,7 @@ body {
   font-size: 1.5rem;
   line-height: 2rem;
 }
+
 
 .text-3xl {
   font-size: 1.875rem;
