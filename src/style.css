@@ -598,6 +598,14 @@ body {
   top: 38%;
 }
 
+.top-\[63px\] {
+  top: 63px;
+}
+
+.top-\[60px\] {
+  top: 60px;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -757,6 +765,10 @@ body {
 
 .mt-\[82px\] {
   margin-top: 82px;
+}
+
+.mt-\[80px\] {
+  margin-top: 80px;
 }
 
 .line-clamp-2 {
@@ -1337,6 +1349,14 @@ body {
 
   .md\:w-\[461px\] {
     width: 461px;
+  }
+
+  .md\:w-\[43\%\] {
+    width: 43%;
+  }
+
+  .md\:w-\[43vh\] {
+    width: 43vh;
   }
 
   .md\:flex-row {
