@@ -4,7 +4,7 @@ document
     e.preventDefault();
     const menu = this.nextElementSibling;
     menu.classList.toggle("show");
-    this.querySelector(".arrow").classList.toggle("rotate-270");
+    this.querySelector(".arrow").classList.toggle("rotate-180");
   });
 
 document.addEventListener("click", function (e) {
@@ -12,7 +12,7 @@ document.addEventListener("click", function (e) {
   const menu = document.querySelector(".dropdown-menu");
   if (!toggle.contains(e.target) && !menu.contains(e.target)) {
     menu.classList.remove("show");
-    toggle.querySelector(".arrow").classList.remove("rotate-270");
+    toggle.querySelector(".arrow").classList.remove("rotate-180");
   }
 });
 document
@@ -21,7 +21,7 @@ document
     e.preventDefault();
     const menu = this.nextElementSibling;
     menu.classList.toggle("show");
-    this.querySelector(".arrow").classList.toggle("rotate-270");
+    this.querySelector(".arrow").classList.toggle("rotate-180");
   });
 
 document.addEventListener("click", function (e) {
@@ -29,7 +29,7 @@ document.addEventListener("click", function (e) {
   const menu = document.querySelector(".mob-dropdown-menu");
   if (!toggle.contains(e.target) && !menu.contains(e.target)) {
     menu.classList.remove("show");
-    toggle.querySelector(".arrow").classList.remove("rotate-270");
+    toggle.querySelector(".arrow").classList.remove("rotate-180");
   }
 });
 
