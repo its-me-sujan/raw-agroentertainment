@@ -29,6 +29,47 @@
         width: 25%;
         width: fit-content;
       }
+
+      .scroller__inner {
+        padding-block: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .scroller[data-animated="true"] {
+        overflow: hidden;
+        -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+        mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+      }
+
+      .scroller[data-animated="true"] .scroller__inner {
+        width: max-content;
+        flex-wrap: nowrap;
+        animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+      }
+
+      .scroller[data-direction="right"] {
+        --_animation-direction: reverse;
+      }
+
+      .scroller[data-direction="left"] {
+        --_animation-direction: forwards;
+      }
+
+      .scroller[data-speed="fast"] {
+        --_animation-duration: 20s;
+      }
+
+      .scroller[data-speed="slow"] {
+        --_animation-duration: 60s;
+      }
+
+      @keyframes scroll {
+        to {
+          transform: translate(calc(-50% - 0.5rem));
+        }
+      }
     </style>
   </head>
   <body>
@@ -143,9 +184,7 @@
                   class="mx-2 w-[12px] arrow transition-transform duration-300"
                 />
               </a>
-              <ul
-                class="dropdown-menu absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg"
-              >
+              <ul class="dropdown-menu absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg">
                 <li>
                   <a
                     href="our-journey.html"
@@ -210,6 +249,7 @@
     </nav>
 
     <main>
+      <!-- -------------------------------------------------------------------Intro---------------------------------------------------------------------------- -->
       <div
         class="h-[94vh] flex bg-black"
         style="
@@ -217,35 +257,32 @@
           background-size: contain;
           background-repeat: no-repeat;
           background-position: center right;
-        "
-      >
+        ">
         <div class="h-[345px] w-[573px] self-center text-white ml-[91px]">
           <div class="text-[48px] font-bold">
             <span>Sambridhi ko Lagi</span><br />
             <span class="text-[#D19C34]">Naya Dristi</span>
           </div>
           <div class="text-[24px] mt-[21px] mb-[28px] text-justify">
-            Prosperity in any nation requires more than just resources, means,
-            and potential. The mindset of society also plays a crucial role in a
-            country's progress.
+            Prosperity in any nation requires more than just resources, means, and potential. The mindset of society
+            also plays a crucial role in a country's progress.
           </div>
           <div>
             <a
               href="https://youtu.be/2tqDnKe-Cqg?si=FxotAIyBjwzNE0Vw"
               target="_blank"
-              class="grid w-[250px] h-[61px] bg-[#E9C13A] rounded-full"
-            >
-              <span class="place-self-center text-[24px]"
-                >Unveil Our Journey</span
-              >
+              class="grid w-[250px] h-[61px] bg-[#E9C13A] rounded-full">
+              <span class="place-self-center text-[24px]">Unveil Our Journey</span>
             </a>
           </div>
         </div>
       </div>
-      <div class="mt-[80px]">
-        <div class="flex justify-center">
+      <!-- ------------------------------------------------------------------Partners-------------------------------------------------------------------------- -->
+      <div class="mt-[100px]">
+        <div class="flex justify-center mx-[200px]">
           <span class="text-[36px] font-bold">Collaborative Partners</span>
         </div>
+<<<<<<< HEAD
         <div class="flex justify-center">
           <div
             class="flex justify-between px-[82px] mt-[20px] h-[166px] w-full"
@@ -282,30 +319,65 @@
               src="../static/icons/tauwa.png"
               class="h-[86px] w-[86px] m-[40px] bg-white"
             />
+=======
+        <div class="mx-[5vw] scroller" data-direction="left" data-speed="slow">
+          <div class="px-[82px] mt-[20px] h-[166px] scroller__inner">
+            <div class="grid place-items-center h-[86px] w-[86px] m-[40px] bg-white rounded-lg">
+              <img src="../images/1-HimalayaTV.png" class="h-fit w-fit aspect-auto bg-white rounded-lg" />
+            </div>
+            <div class="grid place-items-center h-[86px] w-[86px] m-[40px] bg-white rounded-lg">
+              <img src="../images/2-NepalGov.png" class="h-fit w-fit aspect-auto bg-white rounded-lg" />
+            </div>
+            <div class="grid place-items-center h-[86px] w-[86px] m-[40px] bg-white rounded-lg">
+              <img src="../images/3-SmartKrishi.png" class="h-fit w-fit aspect-auto bg-white rounded-lg" />
+            </div>
+            <div class="grid place-items-center h-[86px] w-[86px] m-[40px] bg-white rounded-lg">
+              <img src="../images/4-ESquare.png" class="h-fit w-fit aspect-auto bg-white rounded-lg" />
+            </div>
+            <div class="grid place-items-center h-[86px] w-[86px] m-[40px] bg-white rounded-lg">
+              <img src="../images/5-TU.png" class="h-fit w-fit aspect-auto bg-white rounded-lg" />
+            </div>
+            <div class="grid place-items-center h-[86px] w-[86px] m-[40px] bg-white rounded-lg">
+              <img src="../images/6-iaas.png" class="h-fit w-fit aspect-auto bg-white rounded-lg" />
+            </div>
+            <div class="grid place-items-center h-[86px] w-[86px] m-[40px] bg-white rounded-lg">
+              <img src="../images/7-OSRDigital.png" class="h-fit w-fit aspect-auto bg-white rounded-lg" />
+            </div>
+            <div class="grid place-items-center h-[86px] w-[86px] m-[40px] bg-white rounded-lg">
+              <img src="../images/8-Tauwa.png" class="h-fit w-fit aspect-auto bg-white rounded-lg" />
+            </div>
+            <div class="grid place-items-center h-[86px] w-[86px] m-[40px] bg-white rounded-lg">
+              <img src="../images/9-YetiAirlines.png" class="h-fit w-fit aspect-auto bg-white rounded-lg" />
+            </div>
+            <div class="grid place-items-center h-[86px] w-[86px] m-[40px] bg-white rounded-lg">
+              <img src="../images/10-Muktinath.png" class="h-fit w-fit aspect-auto bg-white rounded-lg" />
+            </div>
+            <div class="grid place-items-center h-[86px] w-[86px] m-[40px] bg-white rounded-lg">
+              <img src="../images/11-Gudne.png" class="h-fit w-fit aspect-auto bg-white rounded-lg" />
+            </div>
+            <div class="grid place-items-center h-[86px] w-[86px] m-[40px] bg-white rounded-lg">
+              <img src="../images/12-Chitlang.png" class="h-fit w-fit aspect-auto bg-white rounded-lg" />
+            </div>
+            <div class="grid place-items-center h-[86px] w-[86px] m-[40px] bg-white rounded-lg">
+              <img src="../images/13-RBB.png" class="h-fit w-fit aspect-auto bg-white rounded-lg" />
+            </div>
+>>>>>>> 3a5fe934463f88e330c205eee34b3d69fe893dc1
           </div>
         </div>
       </div>
+      <!-- -------------------------------------------------------------------Summary-------------------------------------------------------------------------- -->
       <div class="mt-[100px] mx-[200px]">
         <div class="grid grid-cols-12">
           <div class="col-span-6 mr-[60px]">
-            <div class="font-bold text-[36px]">
-              RAW - Revolutionary Agriculture War
-            </div>
+            <div class="font-bold text-[36px]">RAW - Revolutionary Agriculture War</div>
             <div class="text-[26px] mt-[16px] mb-[24px] text-justify">
-              RAW masterfully blends agriculture with entertainment, offering a
-              dynamic and glamorous competition that redefines the genre. The
-              show features two distinct categories of contestants: seasoned
-              farmers and ambitious agricultural graduates.
+              RAW masterfully blends agriculture with entertainment, offering a dynamic and glamorous competition that
+              redefines the genre. The show features two distinct categories of contestants: seasoned farmers and
+              ambitious agricultural graduates.
             </div>
             <div>
-              <a
-                href=""
-                target="_blank"
-                class="grid w-[213px] h-[57px] bg-[#E9C13A] rounded-full"
-              >
-                <span class="place-self-center text-[24px] text-white">
-                  Learn More
-                </span>
+              <a href="" target="_blank" class="grid w-[213px] h-[57px] bg-[#E9C13A] rounded-full">
+                <span class="place-self-center text-[24px] text-white"> Learn More </span>
               </a>
             </div>
           </div>
@@ -323,11 +395,11 @@
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
+              allowfullscreen></iframe>
           </div>
         </div>
       </div>
+      <!-- ----------------------------------------------------------------News Carousel----------------------------------------------------------------------- -->
       <div class="mt-[100px] mx-[200px]">
         <div class="flex justify-between">
           <div class="font-bold text-[36px]">News and Highlights</div>
@@ -335,235 +407,211 @@
             <a href="" target="_blank">View More ></a>
           </div>
         </div>
-        <div></div>
-      </div>
-      <div class="mt-[24px] mx-[200px]">
-        <!-- Carousel Container -->
-        <div class="carousel-container relative">
-          <div id="carousel" class="carousel-wrapper gap-[16px]">
-            <!-- Carousel Items -->
-            <div class="w-fit carousel-item p-[20px] rounded-lg">
-              <iframe
-                width="239"
-                height="180"
-                class="border rounded-lg"
-                src="https://www.youtube.com/embed/l2dOl814Nxc?si=246vZZZQm_685Z8Q"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-              <div class="w-[239px] mt-4 rounded-lg">
-                <p class="line-clamp-2 font-bold">
-                  RAW - Revolutionary Agriculture War | World's First
-                  Agriculture Game Reality Show | Thematic Promo 1
-                </p>
-                <p>Bhadra 14, 2080</p>
+        <div class="mt-[24px]">
+          <!-- Carousel Container -->
+          <div class="carousel-container relative">
+            <div id="carousel" class="carousel-wrapper gap-[16px] h-[325px]">
+              <!-- Carousel Items -->
+              <div class="w-fit carousel-item p-[20px] rounded-lg">
+                <iframe
+                  width="239"
+                  height="180"
+                  class="border rounded-lg"
+                  src="https://www.youtube.com/embed/l2dOl814Nxc?si=246vZZZQm_685Z8Q"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+                <div class="w-[239px] mt-4 rounded-lg">
+                  <p class="line-clamp-2 font-bold">
+                    RAW - Revolutionary Agriculture War | World's First Agriculture Game Reality Show | Thematic Promo 1
+                  </p>
+                  <p>Bhadra 14, 2080</p>
+                </div>
               </div>
-            </div>
-            <div class="w-fit carousel-item p-[20px] rounded-lg">
-              <iframe
-                width="239"
-                height="180"
-                class="border rounded-lg"
-                src="https://www.youtube.com/embed/2tqDnKe-Cqg?si=NUfPQq0M-X41Syoi"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-              <div class="w-[239px] mt-4 rounded-lg">
-                <p class="line-clamp-2 font-bold">
-                  RAW - Revolutionary Agriculture War | World's First
-                  Agriculture Game Reality Show | Rajesh Hamal
-                </p>
-                <p>Bhadra 28, 2080</p>
+              <div class="w-fit carousel-item p-[20px] rounded-lg">
+                <iframe
+                  width="239"
+                  height="180"
+                  class="border rounded-lg"
+                  src="https://www.youtube.com/embed/2tqDnKe-Cqg?si=NUfPQq0M-X41Syoi"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+                <div class="w-[239px] mt-4 rounded-lg">
+                  <p class="line-clamp-2 font-bold">
+                    RAW - Revolutionary Agriculture War | World's First Agriculture Game Reality Show | Rajesh Hamal
+                  </p>
+                  <p>Bhadra 28, 2080</p>
+                </div>
               </div>
-            </div>
-            <div class="w-fit carousel-item p-[20px] rounded-lg">
-              <iframe
-                width="239"
-                height="180"
-                class="border rounded-lg"
-                src="https://www.youtube.com/embed/qTJ8USPiRpc?si=TGQGhyJ9HmBcwaR1"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-              <div class="w-[239px] mt-4 rounded-lg">
-                <p class="line-clamp-2 font-bold">
-                  आवेदन कहिले खुल्छ ? RAW - Revolutionary Agriculture War ||
-                  Rajesh Hamal
-                </p>
-                <p>Bhadra 14, 2080</p>
+              <div class="w-fit carousel-item p-[20px] rounded-lg">
+                <iframe
+                  width="239"
+                  height="180"
+                  class="border rounded-lg"
+                  src="https://www.youtube.com/embed/qTJ8USPiRpc?si=TGQGhyJ9HmBcwaR1"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+                <div class="w-[239px] mt-4 rounded-lg">
+                  <p class="line-clamp-2 font-bold">
+                    आवेदन कहिले खुल्छ ? RAW - Revolutionary Agriculture War || Rajesh Hamal
+                  </p>
+                  <p>Bhadra 14, 2080</p>
+                </div>
               </div>
-            </div>
-            <div class="w-fit carousel-item p-[20px] rounded-lg">
-              <iframe
-                width="239"
-                height="180"
-                class="border rounded-lg"
-                src="https://www.youtube.com/embed/adsSOs7lyTc?si=0rW0aGiZEjIr2MWi"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-              <div class="w-[239px] mt-4 rounded-lg">
-                <p class="line-clamp-2 font-bold">
-                  आवेदन कसरी दिने ? Application Open | RAW–Revolutionary
-                  AgricultureWar| Rajesh Hamal
-                </p>
-                <p>Ashar 13, 2081</p>
+              <div class="w-fit carousel-item p-[20px] rounded-lg">
+                <iframe
+                  width="239"
+                  height="180"
+                  class="border rounded-lg"
+                  src="https://www.youtube.com/embed/adsSOs7lyTc?si=0rW0aGiZEjIr2MWi"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+                <div class="w-[239px] mt-4 rounded-lg">
+                  <p class="line-clamp-2 font-bold">
+                    आवेदन कसरी दिने ? Application Open | RAW–Revolutionary AgricultureWar| Rajesh Hamal
+                  </p>
+                  <p>Ashar 13, 2081</p>
+                </div>
               </div>
-            </div>
-            <div class="w-fit carousel-item p-[20px] rounded-lg">
-              <iframe
-                width="239"
-                height="180"
-                class="border rounded-lg"
-                src="https://www.youtube.com/embed/q3xrfSOpzzc?si=Slt4O5z_q3kxM3g7"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-              <div class="w-[239px] mt-4 rounded-lg">
-                <p class="line-clamp-2 font-bold">
-                  'र' सहकार्यको लागि आह्वान Call for Collaboration |
-                  RAW–Revolutionary Agriculture War |
-                </p>
-                <p>Ashar 25, 2081</p>
+              <div class="w-fit carousel-item p-[20px] rounded-lg">
+                <iframe
+                  width="239"
+                  height="180"
+                  class="border rounded-lg"
+                  src="https://www.youtube.com/embed/q3xrfSOpzzc?si=Slt4O5z_q3kxM3g7"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+                <div class="w-[239px] mt-4 rounded-lg">
+                  <p class="line-clamp-2 font-bold">
+                    'र' सहकार्यको लागि आह्वान Call for Collaboration | RAW–Revolutionary Agriculture War |
+                  </p>
+                  <p>Ashar 25, 2081</p>
+                </div>
               </div>
-            </div>
-            <div class="w-fit carousel-item p-[20px] rounded-lg">
-              <iframe
-                width="239"
-                height="180"
-                class="border rounded-lg"
-                src="https://www.youtube.com/embed/BAHU3mEoDgA?si=LKO060Mgmbz7RkCL"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-              <div class="w-[239px] mt-4 rounded-lg">
-                <p class="line-clamp-2 font-bold">
-                  देशमा खेत छ, देश अचेत छ - कवि गोर्खे चार्ली | Revolutionary
-                  Agriculture War| Application Call Event
-                </p>
-                <p>Ashar 28, 2081</p>
+              <div class="w-fit carousel-item p-[20px] rounded-lg">
+                <iframe
+                  width="239"
+                  height="180"
+                  class="border rounded-lg"
+                  src="https://www.youtube.com/embed/BAHU3mEoDgA?si=LKO060Mgmbz7RkCL"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+                <div class="w-[239px] mt-4 rounded-lg">
+                  <p class="line-clamp-2 font-bold">
+                    देशमा खेत छ, देश अचेत छ - कवि गोर्खे चार्ली | Revolutionary Agriculture War| Application Call Event
+                  </p>
+                  <p>Ashar 28, 2081</p>
+                </div>
               </div>
-            </div>
-            <div class="w-fit carousel-item p-[20px] rounded-lg">
-              <iframe
-                width="239"
-                height="180"
-                class="border rounded-lg"
-                src="https://www.youtube.com/embed/XYjZ7X9VxdE?si=jzZazQKrPWBfiT6o"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-              <div class="w-[239px] mt-4 rounded-lg">
-                <p class="line-clamp-2 font-bold">
-                  'र' मा किसान किन सहभागी हुने ? Why Farmer Contestants?RAW
-                  Revolutionary Agriculture War Rajesh Hamal
-                </p>
-                <p>Shrawan 1, 2081</p>
+              <div class="w-fit carousel-item p-[20px] rounded-lg">
+                <iframe
+                  width="239"
+                  height="180"
+                  class="border rounded-lg"
+                  src="https://www.youtube.com/embed/XYjZ7X9VxdE?si=jzZazQKrPWBfiT6o"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+                <div class="w-[239px] mt-4 rounded-lg">
+                  <p class="line-clamp-2 font-bold">
+                    'र' मा किसान किन सहभागी हुने ? Why Farmer Contestants?RAW Revolutionary Agriculture War Rajesh Hamal
+                  </p>
+                  <p>Shrawan 1, 2081</p>
+                </div>
               </div>
-            </div>
-            <div class="w-fit carousel-item p-[20px] rounded-lg">
-              <iframe
-                width="239"
-                height="180"
-                class="border rounded-lg"
-                src="https://www.youtube.com/embed/_EVNc_ZC8Bs?si=-uVoZk9By81GcpEp"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-              <div class="w-[239px] mt-4 rounded-lg">
-                <p class="line-clamp-2 font-bold">
-                  'र' मा कृषि प्राविधिक किन सहभागी हुने ? Why Agriculture
-                  Graduates? | RAW | Rajesh Hamal
-                </p>
-                <p>Shrawan 3, 2081</p>
+              <div class="w-fit carousel-item p-[20px] rounded-lg">
+                <iframe
+                  width="239"
+                  height="180"
+                  class="border rounded-lg"
+                  src="https://www.youtube.com/embed/_EVNc_ZC8Bs?si=-uVoZk9By81GcpEp"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+                <div class="w-[239px] mt-4 rounded-lg">
+                  <p class="line-clamp-2 font-bold">
+                    'र' मा कृषि प्राविधिक किन सहभागी हुने ? Why Agriculture Graduates? | RAW | Rajesh Hamal
+                  </p>
+                  <p>Shrawan 3, 2081</p>
+                </div>
               </div>
-            </div>
-            <div class="w-fit carousel-item p-[20px] rounded-lg">
-              <iframe
-                width="239"
-                height="180"
-                class="border rounded-lg"
-                src="https://www.youtube.com/embed/4n2kLMDTJ1g?si=BQMFVo5tOuum6XXx"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-              <div class="w-[239px] mt-4 rounded-lg">
-                <p class="line-clamp-2 font-bold">
-                  'र' ले जोड्ने काम गर्छ ! RAW–Revolutionary Agriculture War |
-                  Rajesh Hamal
-                </p>
-                <p>Shrawan 9, 2081</p>
+              <div class="w-fit carousel-item p-[20px] rounded-lg">
+                <iframe
+                  width="239"
+                  height="180"
+                  class="border rounded-lg"
+                  src="https://www.youtube.com/embed/4n2kLMDTJ1g?si=BQMFVo5tOuum6XXx"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+                <div class="w-[239px] mt-4 rounded-lg">
+                  <p class="line-clamp-2 font-bold">
+                    'र' ले जोड्ने काम गर्छ ! RAW–Revolutionary Agriculture War | Rajesh Hamal
+                  </p>
+                  <p>Shrawan 9, 2081</p>
+                </div>
               </div>
-            </div>
-            <div class="w-fit carousel-item p-[20px] rounded-lg">
-              <iframe
-                width="239"
-                height="180"
-                class="border rounded-lg"
-                src="https://www.youtube.com/embed/IqhewO6nSbY?si=0kimUNcCm2TZmTK7"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-              <div class="w-[239px] mt-4 rounded-lg">
-                <p class="line-clamp-2 font-bold">
-                  हिलोमा डोरी तानातान महाहोस्ट राजेश हमाल Vs. सबैजना |
-                  RAW–Revolutionary Agriculture War | Tug of War
-                </p>
-                <p>Shrawan 11, 2081</p>
+              <div class="w-fit carousel-item p-[20px] rounded-lg">
+                <iframe
+                  width="239"
+                  height="180"
+                  class="border rounded-lg"
+                  src="https://www.youtube.com/embed/IqhewO6nSbY?si=0kimUNcCm2TZmTK7"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+                <div class="w-[239px] mt-4 rounded-lg">
+                  <p class="line-clamp-2 font-bold">
+                    हिलोमा डोरी तानातान महाहोस्ट राजेश हमाल Vs. सबैजना | RAW–Revolutionary Agriculture War | Tug of War
+                  </p>
+                  <p>Shrawan 11, 2081</p>
+                </div>
               </div>
-            </div>
-            <div class="w-fit carousel-item p-[20px] rounded-lg">
-              <iframe
-                width="239"
-                height="180"
-                class="border rounded-lg"
-                src="https://www.youtube.com/embed/ABmbx7K5FYE?si=gEIUNyi2PH_aAMNz"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-              <div class="w-[239px] mt-4 rounded-lg">
-                <p class="line-clamp-2 font-bold text-[24px]">
-                  'र' का महाहोस्ट राजेश हमाल Application Call |
-                  RAW–Revolutionary Agriculture War| Rajesh Hamal
-                </p>
-                <p class="text-[22px]">Shrawan 17, 2081</p>
+              <div class="w-fit carousel-item p-[20px] rounded-lg">
+                <iframe
+                  width="239"
+                  height="180"
+                  class="border rounded-lg"
+                  src="https://www.youtube.com/embed/ABmbx7K5FYE?si=gEIUNyi2PH_aAMNz"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+                <div class="w-[239px] mt-4 rounded-lg">
+                  <p class="line-clamp-2 font-bold text-[24px]">
+                    'र' का महाहोस्ट राजेश हमाल Application Call | RAW–Revolutionary Agriculture War| Rajesh Hamal
+                  </p>
+                  <p class="text-[22px]">Shrawan 17, 2081</p>
+                </div>
               </div>
+              <!-- Add more carousel-item divs as needed -->
             </div>
-            <!-- Add more carousel-item divs as needed -->
-          </div>
 
           <!-- Carousel Controls -->
           <button
@@ -580,6 +628,7 @@
           </button>
         </div>
       </div>
+      <!-- ---------------------------------------------------------------------Map---------------------------------------------------------------------------- -->
       <div class="mt-[100px] mx-[200px]">
         <div class="grid grid-cols-12">
           <div class="col-span-6 border rounded-lg">
@@ -590,48 +639,34 @@
               style="border: 0"
               allowfullscreen=""
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <div class="col-span-6 ml-[60px]">
-            <div class="font-bold text-[36px]">
-              Empowering Farmers Nationwide
-            </div>
+            <div class="font-bold text-[36px]">Empowering Farmers Nationwide</div>
             <div class="text-[26px] mt-[16px] text-justify">
-              Combining agriculture with entertainment, our show journeys across
-              Nepal to highlight the lives of farmers and agricultural experts.
-              Through inspiring stories and real-life challenges, we bring both
-              knowledge and entertainment, empowering communities while
-              celebrating the heart of Nepal's agriculture.
+              Combining agriculture with entertainment, our show journeys across Nepal to highlight the lives of farmers
+              and agricultural experts. Through inspiring stories and real-life challenges, we bring both knowledge and
+              entertainment, empowering communities while celebrating the heart of Nepal's agriculture.
             </div>
             <div class="grid grid-cols-12 mt-[82px] gap-[20px]">
               <div
-                class="grid place-items-center col-span-4 bg-[#E9E9E9] shadow-[#86311C61] shadow-xl border rounded-lg aspect-square"
-              >
+                class="grid place-items-center col-span-4 bg-[#E9E9E9] shadow-[#86311C61] shadow-xl border rounded-lg aspect-square">
                 <div class="">
-                  <p class="text-[60px] font-bold text-[#501000] text-center">
-                    132
-                  </p>
+                  <p class="text-[60px] font-bold text-[#501000] text-center">132</p>
                   <p class="text-[20px] text-center">Farmers</p>
                 </div>
               </div>
               <div
-                class="grid place-items-center col-span-4 bg-[#E9E9E9] shadow-[#86311C61] shadow-xl border rounded-lg aspect-square"
-              >
+                class="grid place-items-center col-span-4 bg-[#E9E9E9] shadow-[#86311C61] shadow-xl border rounded-lg aspect-square">
                 <div class="">
-                  <p class="text-[60px] font-bold text-[#501000] text-center">
-                    60
-                  </p>
+                  <p class="text-[60px] font-bold text-[#501000] text-center">60</p>
                   <p class="text-[20px] text-center">Agriculture experts</p>
                 </div>
               </div>
               <div
-                class="grid place-items-center col-span-4 bg-[#E9E9E9] shadow-[#86311C61] shadow-xl border rounded-lg aspect-square"
-              >
+                class="grid place-items-center col-span-4 bg-[#E9E9E9] shadow-[#86311C61] shadow-xl border rounded-lg aspect-square">
                 <div class="">
-                  <p class="text-[60px] font-bold text-[#501000] text-center">
-                    68
-                  </p>
+                  <p class="text-[60px] font-bold text-[#501000] text-center">68</p>
                   <p class="text-[20px] text-center">Districts covered</p>
                 </div>
               </div>
@@ -639,18 +674,124 @@
           </div>
         </div>
       </div>
+      <!-- --------------------------------------------------------------------Cast---------------------------------------------------------------------------- -->
       <div class="mt-[100px] mx-[200px]">
         <div class="text-[36px] font-bold">Meet the Cast</div>
-        <div class="mt-[24px]">
-          <img src="../static/images/Screenshot 2024-09-18 123910.png" />
+        <div class="flex mt-[24px] gap-[60px]">
+          <!-- <img src="../images/Screenshot 2024-09-18 123910.png" /> -->
+          <div class="w-[250px]">
+            <img src="../images/Cast Rajesh Hamal.png" class="rounded-full border" />
+            <div class="my-[18px] text-center">
+              <p class="font-bold text-[24px]">Rajesh Hamal</p>
+              <p class="text-[20px]">Maha Host</p>
+            </div>
+          </div>
+          <div class="w-[250px]">
+            <img src="../images/Cast Yogendra Kumar Karki.png" class="rounded-full border" />
+            <div class="my-[18px] text-center">
+              <p class="font-bold text-[24px]">Dr. Yogendra Kumar Karki</p>
+              <p class="text-[20px]">Host</p>
+            </div>
+          </div>
+          <div class="w-[250px]">
+            <img src="../images/Cast Namrata Pandey.png" class="rounded-full border" />
+            <div class="my-[18px] text-center">
+              <p class="font-bold text-[24px]">Namrata Pandey</p>
+              <p class="text-[20px]">Judge</p>
+            </div>
+          </div>
         </div>
       </div>
+      <!-- ---------------------------------------------------------------------FAQ---------------------------------------------------------------------------- -->
+      <div class="mt-[100px] mx-[200px]">
+      <div class="text-[36px] font-bold">Frequently Asked Questions</div>
+      <div class="mt-6 h-[50vh] grid grid-cols-12">
+        <div class="col-span-5">
+          <div id="show-info-btn" class="my-4 h-fit w-fit py-3 px-10 bg-[#961E00] rounded-full">
+            <span class="text-2xl text-white">Show Info</span>
+          </div>
+          <div id="viewers-btn" class="my-4 h-fit w-fit py-3 px-10 border border-[#961E00] rounded-full">
+            <span class="text-2xl text-[#961E00]">Viewers and Fans</span>
+          </div>
+          <div id="contestant-btn" class="my-4 h-fit w-fit py-3 px-10 border border-[#961E00] rounded-full">
+            <span class="text-2xl text-[#961E00]">Contestant Experience</span>
+          </div>
+        </div>
+
+        <div class="col-span-7 mt-[10vh] ml-24">
+          <div class="w-full mx-auto text-white">
+            <!-- Accordion Item 1 -->
+            <div class="accordion-item border bg-[#551100] rounded-lg mb-4">
+              <h2 class="accordion-header rounded-lg">
+                <button
+                  class="accordion-toggle flex justify-between w-full p-4 text-left text-[24px] font-bold bg-[#551100] rounded-lg focus:outline-none"
+                  onclick="toggleAccordion(0)">
+                  <span id="accordion-title-1">What is the premise of the reality show?</span>
+                  <svg
+                    class="w-6 h-6 transition-transform transform rotate-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+              </h2>
+              <div class="accordion-content hidden p-4 bg-[#551100] rounded-lg">
+                <p id="accordion-content-1" class="text-[20px]">You can apply online by submitting a form and a video audition.</p>
+              </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div class="accordion-item border bg-[#551100] rounded-lg mb-4">
+              <h2 class="accordion-header rounded-lg">
+                <button
+                  class="accordion-toggle flex justify-between w-full p-4 text-left text-[24px] font-bold bg-[#551100] rounded-lg focus:outline-none"
+                  onclick="toggleAccordion(1)">
+                  <span id="accordion-title-2">How can I apply?</span>
+                  <svg
+                    class="w-6 h-6 transition-transform transform rotate-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+              </h2>
+              <div class="accordion-content hidden p-4 bg-[#551100] rounded-lg">
+                <p id="accordion-content-2" class="text-[20px]">Contestants must follow strict rules, avoid elimination, and win immunity.</p>
+              </div>
+            </div>
+
+            <!-- Accordion Item 3 -->
+            <div class="accordion-item border bg-[#551100] rounded-lg mb-4">
+              <h2 class="accordion-header rounded-lg">
+                <button
+                  class="accordion-toggle flex justify-between w-full p-4 text-left text-[24px] font-bold bg-[#551100] rounded-lg focus:outline-none"
+                  onclick="toggleAccordion(2)">
+                  <span id="accordion-title-3">Who are the hosts of the show?</span>
+                  <svg
+                    class="w-6 h-6 transition-transform transform rotate-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+              </h2>
+              <div class="accordion-content hidden p-4 bg-[#551100] rounded-lg">
+                <p id="accordion-content-3" class="text-[20px]">The show is hosted by well-known celebrities in the reality TV world.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     </main>
 
-    <div
-      class="footer relative mt-[10%]"
-      data-include="../components/footer.html"
-    ></div>
+    <div class="footer relative mt-[10%]" data-include="../components/footer.html"></div>
 
     <script src="../js/common.js"></script>
     <script src="../js/index.js"></script>
