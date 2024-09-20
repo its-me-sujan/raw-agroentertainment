@@ -11,41 +11,116 @@
     <link rel="icon" href="image/logo.png" type="image/png" />
     <link rel="stylesheet" href="../fonts/font.css" />
     <link rel="stylesheet" href="../style.css" />
-    <style>
-      .dropdown-menu {
-        display: none;
-      }
-      .dropdown-menu.show {
-        display: block;
-      }
-      .rotate-270 {
-        transform: rotate(-90deg);
-      }
-      .map {
-        top: 9%;
-        right: 15%;
-      }
-    </style>
+    <link rel="stylesheet" href="../styles/common.css" />
   </head>
   <body>
-    <nav class="sticky top-0 bg-white z-10 py-1">
-      <div class="flex justify-between w-[96%] my-[11px] mx-auto items-center">
+    <nav class="sticky top-0 bg-white z-50 py-1 shadow-xl">
+      <div class="flex justify-between w-[96%] my-[3px] mx-auto items-center">
         <!-- logo -->
         <div>
           <a href="index.html" class="text-black">
-            <img src="../image/logo.png" alt="Raw Logo" class="w-[106px]" />
+            <img
+              src="../static/icons/raw-logo.png"
+              alt="Raw Logo"
+              class="w-[106px]"
+            />
           </a>
         </div>
         <div class="md:hidden cursor-pointer text-2xl" id="hamburger">
-          <i class="fas fa-bars"></i>
+          <i id="hamburger-icon" class="fas fa-bars"></i>
         </div>
+
+        <!-- sidebar -->
+        <div
+          id="sidebar"
+          class="fixed top-[64px] left-0 w-full h-full bg-white shadow-lg transition-transform transform -translate-x-full md:hidden"
+        >
+          <ul class="space-y-5 p-4 pt-0 text-center text-[20px]">
+            <li>
+              <a
+                href="#"
+                class="flex font-khand-semibold items-center text-black hover:text-[#A74128] mob-dropdown-toggle justify-center"
+              >
+                RAW
+                <img
+                  src="../static/images/arrow.png"
+                  alt=""
+                  class="mx-2 w-[12px] arrow transition-transform duration-300"
+                />
+              </a>
+              <ul class="mob-dropdown-menu space-y-5 mt-2">
+                <li>
+                  <a
+                    href="our-journey.html"
+                    class="block font-khand-semibold text-black hover:text-[#A74128]"
+                    >Our Journey</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="our-purpose.html"
+                    class="block font-khand-semibold text-black hover:text-[#A74128]"
+                    >Our Purpose</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="why-raw.html"
+                    class="block font-khand-semibold text-black hover:text-[#A74128]"
+                    >Why RAW</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block font-khand-semibold text-black hover:text-[#A74128]"
+                    >Meet the Team</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block font-khand-semibold text-black hover:text-[#A74128]"
+                    >Moments</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-black hover:text-[#A74128] font-khand-semibold"
+                >Our Impact</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-black hover:text-[#A74128] font-khand-semibold"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-black hover:text-[#A74128] font-khand-semibold"
+                >Updates</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- main nav -->
         <div class="hidden md:block w-[35%]">
           <ul class="flex gap-x-9">
             <li class="relative">
-              <a href="#" class="flex items-center text-black dropdown-toggle">
+              <a
+                href="#"
+                class="flex font-khand-semibold text-[20px] items-center text-black dropdown-toggle hover:text-[#A74128]"
+              >
                 RAW
                 <img
-                  src="../image/arrow.png"
+                  src="../static/images/arrow.png"
                   alt=""
                   class="mx-2 w-[12px] arrow transition-transform duration-300"
                 />
@@ -56,55 +131,58 @@
                 <li>
                   <a
                     href="our-journey.html"
-                    onclick="loadPage('our-journey')"
-                    class="block px-4 py-2 text-black hover:bg-gray-100"
+                    class="block font-khand-semibold text-[18px] px-4 py-2 text-black hover:text-[#A74128]"
                     >Our Journey</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
-                    onclick="loadPage('our-purpose')"
-                    class="block px-4 py-2 text-black hover:bg-gray-100"
+                    href="our-purpose.html"
+                    class="block font-khand-semibold px-4 py-2 text-black hover:text-[#A74128]"
                     >Our Purpose</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
-                    onclick="loadPage('why-raw')"
-                    class="block px-4 py-2 text-black hover:bg-gray-100"
+                    href="why-raw.html"
+                    class="block font-khand-semibold px-4 py-2 text-black hover:text-[#A74128]"
                     >Why RAW</a
                   >
                 </li>
                 <li>
                   <a
                     href="#"
-                    onclick="loadPage('meet-the-team')"
-                    class="block px-4 py-2 text-black hover:bg-gray-100"
+                    class="block font-khand-semibold px-4 py-2 text-black hover:text-[#A74128]"
                     >Meet the Team</a
                   >
                 </li>
                 <li>
                   <a
                     href="#"
-                    onclick="loadPage('moments')"
-                    class="block px-4 py-2 text-black hover:bg-gray-100"
+                    class="block font-khand-semibold px-4 py-2 text-black hover:text-[#A74128]"
                     >Moments</a
                   >
                 </li>
               </ul>
             </li>
             <li>
-              <a href="#" class="text-black">Our impact</a>
+              <a
+                href="#"
+                class="text-black font-khand-semibold text-[20px] hover:text-[#A74128]"
+                >Our impact</a
+              >
             </li>
             <li>
-              <a href="#" onclick="loadPage('about-us')" class="text-black"
+              <a
+                href="#"
+                class="text-black font-khand-semibold text-[20px] hover:text-[#A74128]"
                 >About us</a
               >
             </li>
             <li>
-              <a href="#" onclick="loadPage('update')" class="text-black"
+              <a
+                href="#"
+                class="text-black font-khand-semibold text-[20px] hover:text-[#A74128]"
                 >Updates</a
               >
             </li>
