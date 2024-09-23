@@ -30,6 +30,7 @@ prevButton.addEventListener("click", () => {
 });
 
 toggleSidebar("hamburger", "sidebar", "hamburger-icon");
+
 //----------------------------------------------Collaborative Carousel----------------------------------------------
 
 const scrollers = document.querySelectorAll(".scroller");
@@ -86,11 +87,7 @@ function toggleAccordion(index) {
 // Accordion data for each category
 const faqData = {
   showInfo: {
-    titles: [
-      "What is the premise of the reality show?",
-      "How can I apply?",
-      "Who are the hosts of the show?",
-    ],
+    titles: ["What is the premise of the reality show?", "How can I apply?", "Who are the hosts of the show?"],
     contents: [
       "You can apply online by submitting a form and a video audition.",
       "Contestants must follow strict rules, avoid elimination, and win immunity.",
@@ -146,17 +143,14 @@ function updateAccordion(data) {
 
 // Function to update the button styles
 function updateButtonStyles(selectedBtn, otherBtn1, otherBtn2) {
-  selectedBtn.className =
-    "my-4 h-fit w-fit py-3 px-10 bg-[#961E00] rounded-full";
-  selectedBtn.querySelector("span").className = "text-2xl text-white";
+  selectedBtn.className = "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-10 bg-[#961E00] rounded-full";
+  selectedBtn.querySelector("span").className = "text-xl md:text-2xl text-white";
 
-  otherBtn1.className =
-    "my-4 h-fit w-fit py-3 px-10 border border-[#961E00] rounded-full";
-  otherBtn1.querySelector("span").className = "text-2xl text-[#961E00]";
+  otherBtn1.className = "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-10 border border-[#961E00] rounded-full";
+  otherBtn1.querySelector("span").className = "text-xl md:text-2xl text-[#961E00]";
 
-  otherBtn2.className =
-    "my-4 h-fit w-fit py-3 px-10 border border-[#961E00] rounded-full";
-  otherBtn2.querySelector("span").className = "text-2xl text-[#961E00]";
+  otherBtn2.className = "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-10 border border-[#961E00] rounded-full";
+  otherBtn2.querySelector("span").className = "text-xl md:text-2xl text-[#961E00]";
 }
 
 // Button elements
