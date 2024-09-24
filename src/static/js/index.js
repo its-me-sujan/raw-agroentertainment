@@ -1,4 +1,5 @@
 //------------------------------------------------------News Swiper-----------------------------------------------
+toggleSidebar("hamburger", "sidebar", "hamburger-icon");
 
 const swiper = new Swiper(".swiper-slider", {
   // Optional parameters
@@ -94,7 +95,11 @@ function toggleAccordion(index) {
 // Accordion data for each category
 const faqData = {
   showInfo: {
-    titles: ["What is the premise of the reality show?", "How can I apply?", "Who are the hosts of the show?"],
+    titles: [
+      "What is the premise of the reality show?",
+      "How can I apply?",
+      "Who are the hosts of the show?",
+    ],
     contents: [
       "You can apply online by submitting a form and a video audition.",
       "Contestants must follow strict rules, avoid elimination, and win immunity.",
@@ -150,14 +155,20 @@ function updateAccordion(data) {
 
 // Function to update the button styles
 function updateButtonStyles(selectedBtn, otherBtn1, otherBtn2) {
-  selectedBtn.className = "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-9 bg-[#961E00] rounded-full";
-  selectedBtn.querySelector("span").className = "text-xl md:text-2xl text-white";
+  selectedBtn.className =
+    "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-9 bg-[#961E00] rounded-full";
+  selectedBtn.querySelector("span").className =
+    "text-xl md:text-2xl text-white";
 
-  otherBtn1.className = "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-9 border border-[#961E00] rounded-full";
-  otherBtn1.querySelector("span").className = "text-xl md:text-2xl text-[#961E00]";
+  otherBtn1.className =
+    "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-9 border border-[#961E00] rounded-full";
+  otherBtn1.querySelector("span").className =
+    "text-xl md:text-2xl text-[#961E00]";
 
-  otherBtn2.className = "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-9 border border-[#961E00] rounded-full";
-  otherBtn2.querySelector("span").className = "text-xl md:text-2xl text-[#961E00]";
+  otherBtn2.className =
+    "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-9 border border-[#961E00] rounded-full";
+  otherBtn2.querySelector("span").className =
+    "text-xl md:text-2xl text-[#961E00]";
 }
 
 // Button elements
@@ -184,49 +195,51 @@ contestantBtn.addEventListener("click", () => {
 //---------------------------------------------------------------Map Section Number Animation------------------------------------------------------------
 
 // Number counting animation
-    function animateNumber(element, targetNumber, duration = 2000) {
-      const startTime = performance.now();
-      const startValue = 0;
-      const endValue = targetNumber;
-      const step = (currentTime) => {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const currentValue = Math.floor(progress * (endValue - startValue) + startValue);
-        element.textContent = currentValue;
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        }
-      };
+function animateNumber(element, targetNumber, duration = 2000) {
+  const startTime = performance.now();
+  const startValue = 0;
+  const endValue = targetNumber;
+  const step = (currentTime) => {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const currentValue = Math.floor(
+      progress * (endValue - startValue) + startValue
+    );
+    element.textContent = currentValue;
+    if (progress < 1) {
       requestAnimationFrame(step);
     }
+  };
+  requestAnimationFrame(step);
+}
 
-    // Intersection Observer to detect when the section is in view
-    function startCountUpAnimationWhenInView(entries, observer) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const fadeElements = entry.target.querySelectorAll('.fade-in');
-          fadeElements.forEach(element => {
-            const targetNumber = element.getAttribute('data-target-number');
-            const numberElement = element.querySelector('.number');
+// Intersection Observer to detect when the section is in view
+function startCountUpAnimationWhenInView(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const fadeElements = entry.target.querySelectorAll(".fade-in");
+      fadeElements.forEach((element) => {
+        const targetNumber = element.getAttribute("data-target-number");
+        const numberElement = element.querySelector(".number");
 
-            // Start animation if not already started
-            if (!element.classList.contains('visible')) {
-              element.classList.add('visible');
-              animateNumber(numberElement, targetNumber);
-            }
-          });
-
-          // Stop observing after the animation starts
-          observer.unobserve(entry.target);
+        // Start animation if not already started
+        if (!element.classList.contains("visible")) {
+          element.classList.add("visible");
+          animateNumber(numberElement, targetNumber);
         }
       });
+
+      // Stop observing after the animation starts
+      observer.unobserve(entry.target);
     }
+  });
+}
 
-    // Set up the intersection observer
-    const observer = new IntersectionObserver(startCountUpAnimationWhenInView, {
-      threshold: 0.5 // 50% of the section must be visible to trigger the animation
-    });
+// Set up the intersection observer
+const observer = new IntersectionObserver(startCountUpAnimationWhenInView, {
+  threshold: 0.5, // 50% of the section must be visible to trigger the animation
+});
 
-    // Observe the section that contains the counters
-    const sectionToAnimate = document.querySelector('.section-to-animate');
-    observer.observe(sectionToAnimate);
+// Observe the section that contains the counters
+const sectionToAnimate = document.querySelector(".section-to-animate");
+observer.observe(sectionToAnimate);
