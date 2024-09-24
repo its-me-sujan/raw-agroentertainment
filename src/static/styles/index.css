@@ -1,20 +1,75 @@
-/* -----------------------------------------------carousel---------------------------------------------------- */
+/* -----------------------------------------------news swiper---------------------------------------------------- */
 
-.carousel-container {
-  overflow: hidden;
+.section {
+  margin: 0 auto;
 }
 
-.carousel-wrapper {
-  display: flex;
-  transition: transform 0.3s ease-in-out;
-  padding: 10px;
-  width: fit-content;
+.container {
+  max-width: 75rem;
+  margin-inline: auto;
 }
 
-.carousel-item {
-  flex: none;
-  width: 25%;
-  width: fit-content;
+.swiper {
+  &-button-next::after,
+  &-button-prev::after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 1rem;
+    width: 2rem;
+    height: 2rem;
+    opacity: 0.75;
+    border-radius: 50%;
+    color: var(--white-100);
+    background: var(--black-300);
+  }
+}
+
+.swiper-pagination {
+  --swiper-pagination-bottom: 0px
+}
+
+/* Custom Swiper button styles */
+.swiper-button-prev,
+.swiper-button-next {
+  width: 55px;
+  position: absolute;
+  top: 45%; 
+  transform: translateY(-50%); /* Center vertically */
+  background-color: white; /* White background */
+  border: 1px solid #e5e7eb; 
+  border-radius: 1rem; /* Rounded corners */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  padding: 0.75rem 1rem; 
+  z-index: 10; /* Ensure it appears above the slides */
+  cursor: pointer;
+}
+
+/* Remove default Swiper arrow icons */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: none; /* Remove default icons */
+}
+
+.swiper-button-prev {
+  left: 0; /* Position on the left side */
+}
+
+.swiper-button-next {
+  right: 0; /* Position on the right side */
+}
+
+.swiper-button-prev img,
+.swiper-button-next img {
+  height: 20px; /* Icon size */
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: #f3f4f6; /* Change background color on hover */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
 
 /* ---------------------------------------------partners scroll---------------------------------------------- */
@@ -28,21 +83,14 @@
 
 .scroller[data-animated="true"] {
   overflow: hidden;
-  -webkit-mask: linear-gradient(
-    90deg,
-    transparent,
-    white 20%,
-    white 80%,
-    transparent
-  );
+  -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
   mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
 }
 
 .scroller[data-animated="true"] .scroller__inner {
   width: max-content;
   flex-wrap: nowrap;
-  animation: scroll var(--_animation-duration, 40s)
-    var(--_animation-direction, forwards) linear infinite;
+  animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
 }
 
 .scroller[data-direction="right"] {
@@ -65,4 +113,16 @@
   to {
     transform: translate(calc(-50% - 0.5rem));
   }
+}
+
+/* ----------------------------------------------Map Section Number Animation------------------------------------- */
+
+/* Additional CSS for the animation */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
 }
