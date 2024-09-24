@@ -1,35 +1,42 @@
-//------------------------------------------------------News Carousel-----------------------------------------------
+//------------------------------------------------------News Swiper-----------------------------------------------
 
-const carousel = document.getElementById("carousel");
-const prevButton = document.getElementById("prev");
-const nextButton = document.getElementById("next");
+const swiper = new Swiper(".swiper-slider", {
+  // Optional parameters
+  centeredSlides: true,
+  slidesPerView: 1,
+  grabCursor: true,
+  freeMode: false,
+  loop: true,
+  mousewheel: false,
+  keyboard: {
+    enabled: true,
+  },
 
-let currentIndex = 0;
-const totalItems = document.querySelectorAll(".carousel-item").length;
-const itemsPerView = 4;
-const width = document.querySelector(".carousel-item").offsetWidth;
+  // If we need pagination
+  pagination: {
+    el: ".swiper-pagination",
+    dynamicBullets: false,
+    clickable: true,
+  },
 
-// Handle Next Button (Infinite Scroll)
-nextButton.addEventListener("click", () => {
-  if (currentIndex < totalItems - itemsPerView) {
-    currentIndex++;
-  } else {
-    currentIndex = 0; // Reset to the first item after reaching the end
-  }
-  carousel.style.transform = `translateX(-${currentIndex * (width + 16)}px)`;
+  // If we need navigation
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  // Responsive breakpoints
+  breakpoints: {
+    640: {
+      slidesPerView: 1.25,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+  },
 });
-
-// Handle Prev Button (Infinite Scroll)
-prevButton.addEventListener("click", () => {
-  if (currentIndex > 0) {
-    currentIndex--;
-  } else {
-    currentIndex = totalItems - itemsPerView; // Wrap around to the last set of items
-  }
-  carousel.style.transform = `translateX(-${currentIndex * (width + 16)}px)`;
-});
-
-toggleSidebar("hamburger", "sidebar", "hamburger-icon");
 
 //----------------------------------------------Collaborative Carousel----------------------------------------------
 
@@ -143,13 +150,13 @@ function updateAccordion(data) {
 
 // Function to update the button styles
 function updateButtonStyles(selectedBtn, otherBtn1, otherBtn2) {
-  selectedBtn.className = "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-10 bg-[#961E00] rounded-full";
+  selectedBtn.className = "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-9 bg-[#961E00] rounded-full";
   selectedBtn.querySelector("span").className = "text-xl md:text-2xl text-white";
 
-  otherBtn1.className = "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-10 border border-[#961E00] rounded-full";
+  otherBtn1.className = "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-9 border border-[#961E00] rounded-full";
   otherBtn1.querySelector("span").className = "text-xl md:text-2xl text-[#961E00]";
 
-  otherBtn2.className = "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-10 border border-[#961E00] rounded-full";
+  otherBtn2.className = "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-9 border border-[#961E00] rounded-full";
   otherBtn2.querySelector("span").className = "text-xl md:text-2xl text-[#961E00]";
 }
 
@@ -173,3 +180,53 @@ contestantBtn.addEventListener("click", () => {
   updateAccordion(faqData.contestants);
   updateButtonStyles(contestantBtn, showInfoBtn, viewersBtn);
 });
+
+//---------------------------------------------------------------Map Section Number Animation------------------------------------------------------------
+
+// Number counting animation
+    function animateNumber(element, targetNumber, duration = 2000) {
+      const startTime = performance.now();
+      const startValue = 0;
+      const endValue = targetNumber;
+      const step = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const currentValue = Math.floor(progress * (endValue - startValue) + startValue);
+        element.textContent = currentValue;
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      };
+      requestAnimationFrame(step);
+    }
+
+    // Intersection Observer to detect when the section is in view
+    function startCountUpAnimationWhenInView(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const fadeElements = entry.target.querySelectorAll('.fade-in');
+          fadeElements.forEach(element => {
+            const targetNumber = element.getAttribute('data-target-number');
+            const numberElement = element.querySelector('.number');
+
+            // Start animation if not already started
+            if (!element.classList.contains('visible')) {
+              element.classList.add('visible');
+              animateNumber(numberElement, targetNumber);
+            }
+          });
+
+          // Stop observing after the animation starts
+          observer.unobserve(entry.target);
+        }
+      });
+    }
+
+    // Set up the intersection observer
+    const observer = new IntersectionObserver(startCountUpAnimationWhenInView, {
+      threshold: 0.5 // 50% of the section must be visible to trigger the animation
+    });
+
+    // Observe the section that contains the counters
+    const sectionToAnimate = document.querySelector('.section-to-animate');
+    observer.observe(sectionToAnimate);
