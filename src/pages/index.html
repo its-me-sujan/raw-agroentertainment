@@ -6,10 +6,10 @@
     <title>Raw</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="icon" href="../static/icons/raw-icon.png" type="image/png" />
-    <link rel="stylesheet" href="../fonts/font.css" />
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="../styles/common.css" />
-    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../static/fonts/font.css" />
+    <link rel="stylesheet" href="../static/styles/style.css" />
+    <link rel="stylesheet" href="../static/styles/common.css" />
+    <link rel="stylesheet" href="../static/styles/index.css" />
   </head>
   <body>
     <nav class="sticky top-0 bg-white z-50 py-1 shadow-xl">
@@ -57,7 +57,11 @@
                   <a href="#" class="block font-khand-semibold text-black hover:text-[#A74128]">Meet the Team</a>
                 </li>
                 <li>
-                  <a href="#" class="block font-khand-semibold text-black hover:text-[#A74128]">Moments</a>
+                  <a
+                    href="moments.html"
+                    class="block font-khand-semibold text-black hover:text-[#A74128]"
+                    >Moments</a
+                  >
                 </li>
               </ul>
             </li>
@@ -74,7 +78,7 @@
         </div>
 
         <!-- main nav -->
-        <div class="hidden md:block w-[35%]">
+        <div class="hidden md:flex md:mr-[75px]">
           <ul class="flex gap-x-9">
             <li class="relative">
               <a
@@ -114,7 +118,9 @@
                   >
                 </li>
                 <li>
-                  <a href="#" class="block font-khand-semibold text-[18px] px-4 py-2 text-black hover:text-[#A74128]"
+                  <a
+                    href="moments.html"
+                    class="block font-khand-semibold text-[18px] px-4 py-2 text-black hover:text-[#A74128]"
                     >Moments</a
                   >
                 </li>
@@ -630,12 +636,123 @@
       </div>
     </main>
 
-    <div
-      class="footer relative mt-[10%]"
-      data-include="../components/footer.html"
-    ></div>
+    <footer class="relative mt-[10%]">
+      <div class="bg-[#3C0C00]">
+        <div class="w-[80%] mx-auto py-[40px]">
+          <p class="text-white font-khand-medium text-[24px] md:text-[36px]">
+            Newsletter
+          </p>
+          <div class="flex-col flex md:flex-row font-khand-medium">
+            <div>
+              <input
+                type="text"
+                name=""
+                id=""
+                placeholder="Email address"
+                class="w-[80%] md:w-[461px] px-[16px] py-[12px] rounded-3xl"
+              />
+            </div>
+            <div>
+              <button
+                class="text-white mt-2 md:mt-0 md:mx-3 px-8 py-3 rounded-3xl bg-[#D19C34]"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-7 bg-[#220700] text-white">
+        <div
+          class="flex flex-wrap md:flex-row gap-x-[15%] md:items-center w-[80%] mx-auto"
+        >
+          <div class="font-khand-medium">
+            <img
+              src="../static/icons/raw-logo.png"
+              alt=""
+              class="my-1.5 w-[128px]"
+            />
+            <p class="-regular">E square Pvt. Ltd</p>
+            <p>Sachetan Marg, Kathmandu</p>
+            <p>pr.raw.e. square@gmail.com</p>
+            <p>Sachetan Marg, Kathmandu</p>
 
-    <script src="../js/common.js"></script>
-    <script src="../js/index.js"></script>
+            <p class="mt-[12px] mb-[6px]">Explore more on</p>
+            <div class="flex justify-start items-center gap-[16px]">
+              <a href="https://www.facebook.com/raw.agritainment">
+                <div class="facebook-icon"></div>
+              </a>
+              <a href="https://www.instagram.com/raw.agritainment/">
+                <div class="instagram-icon"></div>
+              </a>
+              <a
+                href="https://www.youtube.com/playlist?list=PLTsQhy05ufQdbxUr5ORvh3Q3vjwPZHkhC"
+              >
+                <div class="youtube-icon"></div>
+              </a>
+            </div>
+          </div>
+          <div class="pt-[72px] md:pt-[6px]">
+            <ul>
+              <li>
+                <a
+                  href="our-journey.html"
+                  class="block md:px-4 text-white hover:text-[#A74128]"
+                  >Our Journey</a
+                >
+              </li>
+              <li>
+                <a
+                  href="our-purpose.html"
+                  class="block md:px-4 text-white hover:text-[#A74128]"
+                  >Our Purpose</a
+                >
+              </li>
+              <li>
+                <a
+                  href="why-raw.html"
+                  class="block md:px-4 text-white hover:text-[#A74128]"
+                  >Why RAW</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block md:px-4 text-white hover:text-[#A74128]"
+                  >Meet the Team</a
+                >
+              </li>
+              <li>
+                <a
+                  href="moments.html"
+                  class="block md:px-4 text-white hover:text-[#A74128]"
+                  >Moments</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="lg:absolute mt-3 lg:mt-0 map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d441.5089590358846!2d85.33529187619096!3d27.715073273785748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19701ef52857%3A0xe340745ce98d9edb!2sE%20Square!5e0!3m2!1sen!2snp!4v1726723260960!5m2!1sen!2snp"
+              class="w-[100%] md:w-[432px] md:h-[432px] rounded-lg"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+        <div class="mt-[19px] w-[80%] mx-auto">
+          <p>© 2024 E square Pvt. Ltd. All Rights Reserved.</p>
+          <p>
+            By using this site, you agree to our
+            <span class="text-[#D19C34]"> Terms of Use </span>
+            and<span class="text-[#D19C34]"> Privacy Policy. </span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/common.js"></script>
+    <script src="../static/js/index.js"></script>
   </body>
 </html>

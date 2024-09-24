@@ -33,19 +33,6 @@ document.addEventListener("click", function (e) {
   }
 });
 
-function includeHTML() {
-  const elements = document.querySelectorAll("[data-include]");
-  elements.forEach((el) => {
-    const file = el.getAttribute("data-include");
-    fetch(file)
-      .then((response) => response.text())
-      .then((data) => (el.innerHTML = data))
-      .catch((error) => console.error("Error loading file:", error));
-  });
-}
-
-document.addEventListener("DOMContentLoaded", includeHTML);
-
 function toggleSidebar(hamburgerId, sidebarId, iconId) {
   const hamburger = document.getElementById(hamburgerId);
   const sidebar = document.getElementById(sidebarId);
