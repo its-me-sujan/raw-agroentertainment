@@ -206,7 +206,7 @@
         <img
           src="../static/images/index-hero.png"
           alt="Background Image"
-          class="aspect-auto overflow-hidden sm:w-full h-[35vh] sm:h-auto"
+          class="h-[60vh] xsm:h-auto object-cover"
         />
         <div
           class="absolute top-0 sm:top-1/2 sm:transform sm:-translate-y-1/2 h-[345px] w-[60vw] md:w-[40vw] text-white mx-[8vw] my-8"
@@ -726,10 +726,14 @@
         <div class="font-bold text-2xl sm:text-3xl md:text-4xl">
           Meet the Cast
         </div>
-        <div class="flex flex-wrap justify-between mt-10 gap-16">
-          <div class="w-72">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-10 mt-10"
+        >
+          <div class="flex flex-col items-center">
             <img
               src="../static/icons/Cast Rajesh Hamal.png"
+              width="260"
+              height="260"
               class="rounded-full border"
             />
             <div class="my-5 text-center">
@@ -737,9 +741,11 @@
               <p class="text-2xl">Maha Host</p>
             </div>
           </div>
-          <div class="w-72">
+          <div class="flex flex-col items-center">
             <img
               src="../static/icons/Cast Yogendra Kumar Karki.png"
+              width="260"
+              height="260"
               class="rounded-full border"
             />
             <div class="my-5 text-center">
@@ -747,10 +753,12 @@
               <p class="text-2xl">Host</p>
             </div>
           </div>
-          <div class="w-72">
+          <div class="flex flex-col items-center">
             <img
               src="../static/icons/Cast Namrata Pandey.png"
-              class="rounded-full border"
+              width="260"
+              height="260"
+              class="rounded-full border items-center"
             />
             <div class="my-5 text-center">
               <p class="font-bold text-3xl">Namrata Pandey</p>
