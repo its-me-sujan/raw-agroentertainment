@@ -17,6 +17,18 @@
   top: 9%;
   right: 15%;
 }
+@media only screen and (min-width: 1038px) {
+  .map {
+    top: 9%;
+    right: 3%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .map {
+    top: 9%;
+    right: 8%;
+  }
+}
 .facebook-icon {
   width: 32px;
   height: 32px;
