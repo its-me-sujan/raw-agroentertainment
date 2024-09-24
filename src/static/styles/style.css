@@ -871,6 +871,14 @@ html {
   height: 100%;
 }
 
+.h-\[50vh\] {
+  height: 50vh;
+}
+
+.h-\[70vh\] {
+  height: 70vh;
+}
+
 .w-48 {
   width: 12rem;
 }
@@ -930,6 +938,10 @@ html {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[80vw\] {
+  width: 80vw;
 }
 
 .-translate-x-full {
@@ -1389,6 +1401,10 @@ html {
   .xxs\:w-\[80vw\] {
     width: 80vw;
   }
+
+  .xxs\:w-\[60vw\] {
+    width: 60vw;
+  }
 }
 
 @media (min-width: 670px) {
@@ -1696,6 +1712,11 @@ html {
   .lg\:my-1 {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
+  }
+
+  .lg\:mx-3 {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
   }
 
   .lg\:mt-0 {
