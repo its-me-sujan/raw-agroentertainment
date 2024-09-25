@@ -783,6 +783,10 @@ html {
   margin-top: 8vh;
 }
 
+.mt-0 {
+  margin-top: 0px;
+}
+
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
