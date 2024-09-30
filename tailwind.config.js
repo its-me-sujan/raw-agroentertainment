@@ -15,6 +15,7 @@ module.exports = {
         "khand-bold": 700,
       },
       screens: {
+        xxxs: "365px",
         xxs: "380px",
         mxs: "425px",
         xs: "475px",
