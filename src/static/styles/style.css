@@ -890,6 +890,10 @@ html {
   height: 35vh;
 }
 
+.h-\[50vh\] {
+  height: 50vh;
+}
+
 .w-48 {
   width: 12rem;
 }
@@ -1460,6 +1464,13 @@ html {
 @media (min-width: 365px) {
   .xxxs\:pt-\[72px\] {
     padding-top: 72px;
+  }
+}
+
+@media (min-width: 380px) {
+  .xxs\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 
