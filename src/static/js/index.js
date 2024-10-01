@@ -1,4 +1,50 @@
 //------------------------------------------------------News Swiper-----------------------------------------------
+// Get references to the image and video elements
+const imageElement = document.getElementById("backgroundImage");
+const videoElement = document.getElementById("backgroundVideo");
+
+// Flag to track if we are showing the video or the image
+let showVideo = true;
+
+// Function to toggle between image and video
+const toggleMedia = () => {
+  if (showVideo) {
+    // Fade out the video
+    videoElement.classList.add("opacity-0");
+    videoElement.classList.remove("opacity-100");
+
+    // After the fade out transition, show the image
+    setTimeout(() => {
+      videoElement.style.display = "none"; // Hide the video
+      imageElement.classList.remove("hidden", "opacity-0");
+      imageElement.classList.add("opacity-100");
+      imageElement.style.display = "block"; // Show the image
+    }, 1000); // Match this with your transition duration
+  } else {
+    // Fade out the image
+    imageElement.classList.add("opacity-0");
+    imageElement.classList.remove("opacity-100");
+
+    // After the fade out transition, show the video
+    setTimeout(() => {
+      imageElement.style.display = "none"; // Hide the image
+      videoElement.classList.remove("opacity-0");
+      videoElement.classList.add("opacity-100");
+      videoElement.style.display = "block"; // Show the video
+    }, 1000); // Match this with your transition duration
+  }
+
+  // Flip the state
+  showVideo = !showVideo;
+};
+
+// Initial state
+imageElement.style.display = "none"; // Hide the image initially
+videoElement.style.display = "block"; // Show the video initially
+
+setInterval(toggleMedia, 15000);
+
+//------------------------------------------------------News Swiper-----------------------------------------------
 toggleSidebar("hamburger", "sidebar", "hamburger-icon");
 
 const swiper = new Swiper(".swiper-slider", {
@@ -95,11 +141,7 @@ function toggleAccordion(index) {
 // Accordion data for each category
 const faqData = {
   showInfo: {
-    titles: [
-      "What is the premise of the reality show?",
-      "How can I apply?",
-      "Who are the hosts of the show?",
-    ],
+    titles: ["What is the premise of the reality show?", "How can I apply?", "Who are the hosts of the show?"],
     contents: [
       "You can apply online by submitting a form and a video audition.",
       "Contestants must follow strict rules, avoid elimination, and win immunity.",
@@ -155,20 +197,14 @@ function updateAccordion(data) {
 
 // Function to update the button styles
 function updateButtonStyles(selectedBtn, otherBtn1, otherBtn2) {
-  selectedBtn.className =
-    "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-9 bg-[#961E00] rounded-full";
-  selectedBtn.querySelector("span").className =
-    "text-xl md:text-2xl text-white";
+  selectedBtn.className = "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-9 bg-[#961E00] rounded-full";
+  selectedBtn.querySelector("span").className = "text-xl md:text-2xl text-white";
 
-  otherBtn1.className =
-    "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-9 border border-[#961E00] rounded-full";
-  otherBtn1.querySelector("span").className =
-    "text-xl md:text-2xl text-[#961E00]";
+  otherBtn1.className = "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-9 border border-[#961E00] rounded-full";
+  otherBtn1.querySelector("span").className = "text-xl md:text-2xl text-[#961E00]";
 
-  otherBtn2.className =
-    "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-9 border border-[#961E00] rounded-full";
-  otherBtn2.querySelector("span").className =
-    "text-xl md:text-2xl text-[#961E00]";
+  otherBtn2.className = "my-2 sm:my-4 h-fit w-fit py-3 px-6 mx-2 sm:px-9 border border-[#961E00] rounded-full";
+  otherBtn2.querySelector("span").className = "text-xl md:text-2xl text-[#961E00]";
 }
 
 // Button elements
@@ -202,9 +238,7 @@ function animateNumber(element, targetNumber, duration = 2000) {
   const step = (currentTime) => {
     const elapsed = currentTime - startTime;
     const progress = Math.min(elapsed / duration, 1);
-    const currentValue = Math.floor(
-      progress * (endValue - startValue) + startValue
-    );
+    const currentValue = Math.floor(progress * (endValue - startValue) + startValue);
     element.textContent = currentValue;
     if (progress < 1) {
       requestAnimationFrame(step);
